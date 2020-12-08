@@ -6,11 +6,11 @@ num1 = number % 10
 
 digit = number % 10 if number > 0 else number % -10
 
-print("Last digit of {} is {} and is".format(number, digit), end='')
+print("Last digit of {} is {} ".format(number, digit), end='')
 
 if digit > 5:
-    print(" and is greater than 5")
+    print("and is greater than 5")
 elif digit < 6 and digit != 0:
-    print(" and is less than 6 and not 0")
+    print("and is less than 6 and not 0")
 elif digit == 0:
-    print(" and is 0")
+    print("and is 0")
