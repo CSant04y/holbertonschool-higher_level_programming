@@ -9,5 +9,5 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	(void) head;
 	(void) number;
-	return ('\0');
+	return (NULL);
 }
