@@ -5,7 +5,7 @@ if __name__ == "__main__":
     le = (len(sys.argv)-1)
 
     if le == 0:
-        print("{:d}: arguments.".format(0, sys.argv[le]))
+        print("{:d} arguments.".format(0, sys.argv[le]))
 
     if le == 1:
         print("{:d} argument:".format(1))
