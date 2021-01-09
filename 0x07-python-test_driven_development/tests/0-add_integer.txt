@@ -1,0 +1,76 @@
+The ``0-add_integer.py`` module
+======================
+
+Using ``add_integer``
+------------------
+
+First import ``add_integer``
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+test: adding two postive ints
+    >>> add_integer(1, 2)
+    3
+
+test: the addition of a negative integer
+    >>> add_integer(100, -2)
+    98
+
+test: single number is passed
+    >>> add_integer(2)
+    100
+
+test: float plus negative
+    >>> add_integer(100.3, -2)
+    98
+
+Testing with two negative numbers
+    >>> add_integer(-3, -2)
+    -5
+
+Testing with one integer and b set to 98
+    >>> add_integer(7)
+    105
+
+Testing with the adding of two floats
+    >>> add_integer(2.35, 2.98)
+    4
+
+Testing with the adding of one float and be set to defualt b=98
+    >>> add_integer(2.567)
+    100
+
+Testing with max int
+    >>> add_integer(4294967296, 1)
+    4294967297
+
+Testing to give nothing
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Testing to give a char for a:
+    >>> add_integer("a", 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Testing to pass b a char:
+    >>> add_integer(7, "8")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Testing how add_integer function handles both arguments not of type int or floats
+    >>> add_integer("5", "3")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+test: how add_integer function handles no arguments
+
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
