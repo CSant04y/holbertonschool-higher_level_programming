@@ -1,0 +1,40 @@
+The ``2-rectangle.py`` module
+======================
+
+Using ``rectangle``
+------------------
+
+First import ``rectangle``
+::
+>>> Rectangle = __import__('2-rectangle').Rectangle
+
+Test: large num with medium num
+::
+>>> Rectangle = Rectangle(1111, 33)
+>>> print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+Area: 36663 - Perimeter: 2288
+
+Test: char is passed in
+::
+>>> Rectangle = Rectangle('A', 66)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+Test: float is passed in
+::
+>>> Rectangle = Rectangle(6.35, 6.22)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+Test: nothing is passed in
+::
+>>> my_rectangle = Rectangle()
+
+Test: negative number
+::
+>>> Rectangle = Rectangle(-6, -6)
+Traceback (most recent call last):
+...
+ValueError: width must be >= 0
