@@ -53,3 +53,10 @@ test: Passing no argument to div
     Traceback (most recent call last):
     ...
     TypeError: div must be a number
+
+test: how to handle a functon that is passed inf 
+    >>> matrix_divided([[[1, 2, 3]], [4, 8, 7, 9]], float('inf'))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+

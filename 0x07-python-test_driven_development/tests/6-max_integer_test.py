@@ -20,8 +20,9 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_errors(self):
         """tests errors raised by incorrect type arguments"""
-        self.assertRaises(TestMaxInteger, max_integer, ["string", 3])
+        self.assertRaises(Exception, max_integer, ["string", 3])
 
     def test_empty(self):
         """tests errors if argument is none"""
         self.assertIsNone(max_integer())
+
