@@ -5,12 +5,12 @@
 
 
 def lookup(obj):
-     """This returns a object that is in list form
+    """This returns a object that is in list form
 
      Args:
-         obj ([type]): Object 
+          obj ([type]): Object
 
      Returns:
-         [type]: dir(obj)
+          [type]: dir(obj)
      """
     return dir(obj)
