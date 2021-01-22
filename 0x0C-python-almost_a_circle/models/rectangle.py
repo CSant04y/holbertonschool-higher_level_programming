@@ -118,3 +118,10 @@ class Rectangle(Base):
             [int]: [This Method returns the width times the height]
         """
         return (self.__width * self.__height)
+
+    def display(self):
+        """[This prints the Rectangle instance]
+        """
+        for colum in range(self.__height):
+            print(" "*self.__x, end="")
+            print("#"*self.__width)
