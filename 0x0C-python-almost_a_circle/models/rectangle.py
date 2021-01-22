@@ -122,6 +122,8 @@ class Rectangle(Base):
     def display(self):
         """[This prints the Rectangle instance]
         """
+        for verticle in range(self.__y):
+            print("")
         for colum in range(self.__height):
             print(" "*self.__x, end="")
             print("#"*self.__width)
