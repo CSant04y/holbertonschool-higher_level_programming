@@ -20,7 +20,7 @@ class Rectangle(Base):
         self.y = y
 
     @property
-    def width(self, width):
+    def width(self):
         """[This gets the private instance attribute __width]
 
         Args:
@@ -43,7 +43,7 @@ class Rectangle(Base):
             self.__width = value
 
     @property
-    def height(self, height):
+    def height(self):
         """[This gets the private instance attribute __height]
 
         Args:
@@ -66,7 +66,7 @@ class Rectangle(Base):
             self.__height = value
 
     @property
-    def x(self, x):
+    def x(self):
         """[This gets the private instance attribute x]
 
         Args:
@@ -89,7 +89,7 @@ class Rectangle(Base):
             self.__x = value
 
     @property
-    def y(self, value):
+    def y(self):
         """[This gets the private instance attribute y]
 
         Args:
@@ -136,3 +136,20 @@ class Rectangle(Base):
             self.id, self.__x, self.__y, self.__width, self.__height)
 
         return format_str
+
+    def update(self, *args):
+        """[[This method assigns an argument for each attribute]
+        attr_list = ["id", "width", "height", "x", "y"]]
+        """
+        if args and len(args) != 0:
+            for itr in range(len(args)):
+                if itr == 0:
+                    self.id = args[itr]
+                if itr == 1:
+                    self.width = args[itr]
+                if itr == 2:
+                    self.height = args[itr]
+                if itr == 3:
+                    self.x = args[itr]
+                if itr == 4:
+                    self.y = args[itr]
