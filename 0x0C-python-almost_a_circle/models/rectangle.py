@@ -137,7 +137,7 @@ class Rectangle(Base):
 
         return format_str
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """[[This method assigns an argument for each attribute]
         attr_list = ["id", "width", "height", "x", "y"]]
         """
@@ -153,3 +153,15 @@ class Rectangle(Base):
                     self.x = args[itr]
                 if itr == 4:
                     self.y = args[itr]
+        else:
+            for itr in kwargs:
+                if itr == "id":
+                    self.id = kwargs[itr]
+                if itr == "width":
+                    self.width = kwargs[itr]
+                if itr == "height":
+                    self.height = kwargs[itr]
+                if itr == "x":
+                    self.x = kwargs[itr]
+                if itr == "y":
+                    self.y = kwargs[itr]
