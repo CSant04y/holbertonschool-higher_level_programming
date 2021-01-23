@@ -153,6 +153,7 @@ class Rectangle(Base):
                     self.x = args[itr]
                 if itr == 4:
                     self.y = args[itr]
+
         else:
             for itr in kwargs:
                 if itr == "id":
@@ -165,3 +166,16 @@ class Rectangle(Base):
                     self.x = kwargs[itr]
                 if itr == "y":
                     self.y = kwargs[itr]
+
+    def to_dictionary(self):
+        """[This makes a dictonary that is then returned]
+        """
+        update_dict = {}
+
+        update_dict["id"] = self.id
+        update_dict["width"] = self.width
+        update_dict["height"] = self.height
+        update_dict["x"] = self.x
+        update_dict["y"] = self.y
+
+        return update_dict
