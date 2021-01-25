@@ -34,3 +34,36 @@ class Base:
         if list_dictionaries is None or 0:
             return "[]"
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """[This saves a json string into a file]
+
+        Args:
+            list_objs ([list]): [This is a list of objects]
+        """
+        if list_objs is None:
+            list_objs = []
+
+        filename = cls.__name__ + ".json"
+        list_dict = []
+
+        for item in list_objs:
+                list_dict.append(item.to_dictionary())
+
+
+        with open(filename, "w") as file:
+            file.write(cls.to_json_string(list_dict))
+
+
+    def from_json_string(json_string):
+        """[This makes a json string into a python dictonary]
+
+        Args:
+            json_string ([json string]): [This is the sting
+            that is to get truned into python dictonary]
+        """
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
