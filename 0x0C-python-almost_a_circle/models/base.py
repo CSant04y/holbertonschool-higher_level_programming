@@ -51,11 +51,10 @@ class Base:
         for item in list_objs:
                 list_dict.append(item.to_dictionary())
 
-
         with open(filename, "w") as file:
             file.write(cls.to_json_string(list_dict))
 
-
+    @staticmethod
     def from_json_string(json_string):
         """[This makes a json string into a python dictonary]
 
@@ -67,3 +66,31 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set
+        using update method"""
+        inst = None
+
+        if cls.__name__ == "Rectangle":
+            inst = cls(1, 1, 0, 0)
+
+        if cls.__name__ == "Square":
+            inst = cls(1, 0, 0)
+
+        inst.update(**dictionary)
+        return inst
+
+    @classmethod
+    def load_from_file(cls):
+        """[This returns a list of instances]
+        """
+        filename = cls.__name__ + ".json"
+        list_inst = []
+
+        with open(filename, 'r') as f:
+            for instance in cls.from_json_string(f.read()):
+                list_inst.append(cls.create(**instance))
+
+        return (list_inst)
