@@ -19,7 +19,6 @@ class Square(Rectangle):
             id ([int]): Defaults to None.
         """
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     @property
     def size(self):
@@ -29,14 +28,13 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        """ This sets the size for square"""
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
-        else:
-            self.height = value
-            self.width = value
+        """[This sets the size using the setter method]
+
+        Args:
+            value ([type]): [description]
+        """
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """Overloading with __str__ method
@@ -71,13 +69,13 @@ class Square(Rectangle):
                     self.y = (kwargs[itr2])
 
     def to_dictionary(self):
-            """[This makes a dictonary that is then returned for square ]
+            """[This makes a dictonary that is then returned for square]
             """
             sqr_dict = {}
 
             sqr_dict["id"] = self.id
             sqr_dict["size"] = self.size
-            sqr_dict["height"] = self.height
+#            sqr_dict["height"] = self.height
             sqr_dict["x"] = self.x
             sqr_dict["y"] = self.y
 

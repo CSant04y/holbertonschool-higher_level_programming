@@ -88,9 +88,11 @@ class Base:
         """
         filename = cls.__name__ + ".json"
         list_inst = []
-
-        with open(filename, 'r') as f:
-            for instance in cls.from_json_string(f.read()):
-                list_inst.append(cls.create(**instance))
+        try:
+            with open(filename, 'r') as f:
+                for instance in cls.from_json_string(f.read()):
+                    list_inst.append(cls.create(**instance))
+        except:
+            pass
 
         return (list_inst)
