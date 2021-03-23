@@ -3,7 +3,6 @@ const num = process.argv.splice(2);
 
 if (num.length === 0 || num.length === 1) {
   console.log(0);
-
 } else {
   let i = 0;
   let max = 0;
