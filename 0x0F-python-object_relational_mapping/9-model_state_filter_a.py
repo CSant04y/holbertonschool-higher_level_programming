@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     instance = session.query(State).first()
-    for instance in session.query(State).order_by(State.id):
-        if 'a' in instance.name:
-            print("{}: {}".format(instance.id, instance.name))
+    for instance in session.query(State).filter(
+                                  State.name.like('%a%')).order_by(State.id):
+        print("{}: {}".format(instance.id, instance.name))
     session.close()
