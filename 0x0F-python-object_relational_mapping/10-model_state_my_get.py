@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-lists all State objects from the database in ascending order
-using SQLAlchemy and importing State and Base from model_state
+This prints the object woth the name passed as arg
 """
 from sys import argv
 from model_state import Base, State
