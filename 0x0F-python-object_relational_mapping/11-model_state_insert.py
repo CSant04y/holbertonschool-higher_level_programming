@@ -18,6 +18,5 @@ if __name__ == "__main__":
     session = Session()
     session.add(state_name)
     session.commit()
-    for instance in session.query(State).filter_by(name='Louisiana'):
-        print(instance.id)
+    print("{}".format(state_name.id))
     session.close()
