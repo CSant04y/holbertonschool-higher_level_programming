@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This prints the object woth the name passed as arg
+This prints the object with the name passed as the arg
 """
 from sys import argv
 from model_state import Base, State
