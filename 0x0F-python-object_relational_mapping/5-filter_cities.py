@@ -32,5 +32,5 @@ if __name__ == "__main__":
 
 # This is cleanup where all open cursors and databases are closed
 
-cur.close()
-db.close()
+    cur.close()
+    db.close()
