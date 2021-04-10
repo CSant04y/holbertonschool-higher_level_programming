@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""[ takes in a letter and sends a POST request to
+"""[takes in a letter and sends a POST request to
     http://0.0.0.0:5000/search_user with the letter as a parameter.]
 """
 
 if __name__ == "__main__":
     from sys import argv
     import requests
-    
+
     dic = {}
     if len(argv) >= 2:
         dic['q'] = argv[1]
@@ -21,5 +21,5 @@ if __name__ == "__main__":
             print('No result')
         else:
             print("[{}] {}".format(json_resp['id'], json_resp['name']))
-    except Exception as e:
+    except:
         print("Not a valid JSON")
