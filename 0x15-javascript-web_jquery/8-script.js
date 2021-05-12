@@ -7,4 +7,3 @@ $.getJSON(URL, function (data) {
     $('#list_movies').append('<li>' + value.title + '</li>');
   });
 });
- 
